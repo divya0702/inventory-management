@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, useMediaQuery } from '@mui/material';
 import theme from './theme';
 import DoneIcon from '@mui/icons-material/Done';
 
@@ -133,6 +133,10 @@ const useStyles = makeStyles({
   },
   boxFeature: {
     display: 'flex',
+  },
+  boxMobile: {
+    display: 'flex',
+    flexDirection: 'column'
   }
 });
 
@@ -149,6 +153,7 @@ const TagItem = ({ content }: any) => {
 
 const Pricing: React.FC = () => {
   const classes = useStyles();
+  const isMobile = useMediaQuery('(min-width: 360px) and (max-width:768px)');
 
   return (
     <div id='pricing-section' className={classes.pricingSection}>
@@ -168,7 +173,7 @@ const Pricing: React.FC = () => {
           <div className={classes.iconFeature}>
             <DoneIcon className={classes.iconTick} /><p>Core features:</p>
           </div>
-          <div className={classes.boxFeature}>
+          <div className={ isMobile ? classes.boxMobile : classes.boxFeature}>
             <TagItem content="Barcode Scanning" />
             <TagItem content="Real-Time Updates" />
           </div>
@@ -185,7 +190,7 @@ const Pricing: React.FC = () => {
           <div className={classes.iconFeature}>
             <DoneIcon className={classes.iconTick2} /><p>Advanced features:</p>
           </div>
-          <div className={classes.boxFeature}>
+          <div className={ isMobile ? classes.boxMobile : classes.boxFeature}>
             <TagItem content="Customizable Dashbooard" />
             <TagItem content="Order Fullfilment Workflow" />
           </div>
@@ -202,7 +207,7 @@ const Pricing: React.FC = () => {
           <div className={classes.iconFeature}>
             <DoneIcon className={classes.iconTick} /><p>Advanced features:</p>
           </div>
-          <div className={classes.boxFeature}>
+          <div className={ isMobile ? classes.boxMobile : classes.boxFeature}>
             <TagItem content="Multi-Warehouse Support" />
             <TagItem content="Quality Control Checks" />
           </div>

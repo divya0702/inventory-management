@@ -76,7 +76,7 @@ const Home: React.FC = () => {
             Simplify and optimize your stock management with inventory, the
             ultimate inventory solution.
           </p>
-          <div><DemoButton/></div>
+          <div style={{alignItems: isMobile? 'center' : 'flex-start'}}><DemoButton/></div>
         </section>
       </div>
       <Features />

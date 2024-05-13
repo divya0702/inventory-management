@@ -7,6 +7,7 @@ import Features from './Features'; // Import your Features element
 import Hardware from './Hardware'; // Import your Hardware element
 import Pricing from './Pricing'; // Import your Pricing element
 import FreeTrial from './FreeTrial'; // Import your FreeTrial element
+import { useMediaQuery } from "@mui/material";
 
 function App() {
   // Define anchor links
@@ -17,10 +18,12 @@ function App() {
     { name: 'Pricing', path:'/pricing', id: 'pricing-section' },
   ];
 
+  const isMobile = useMediaQuery('(min-width: 360px) and (max-width:768px)');
+
   return (
     <div className='App'>
       <Router basename='/inventory-management'>
-        <div style={{flex:'1', padding: '4rem'}}>
+        <div style={{flex:'1', padding: isMobile? '1rem': '4rem'}}>
           <Navbar anchorLinks={anchorLinks} />
           <Routes>
             <Route path="/" element={<Home />} />

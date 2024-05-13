@@ -116,20 +116,12 @@ const Navbar: React.FC<Props> = ({ anchorLinks }) => {
         sx={{ backgroundColor: "#FFFFFF", color: theme.primaryColor }}
       >
         <Toolbar disableGutters className={classes.toolbar}>
-          <InventoryIcon sx={{ display: { xs: "none", md: "flex" }, marginRight: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            className={classes.logo}
-          >
-            <MuiLink sx={{textDecoration: 'none'}} href="/inventory-management" color="inherit">Inventory</MuiLink>
-          </Typography>
-
+          <InventoryIcon sx={{ display: 'flex', marginRight: 1 }} />
           <Box
             sx={{
               flexGrow: 1,
               display: { xs: "flex", md: "none" },
-              justifyContent: "space-evenly",
+              justifyContent: "flex-start",
             }}
           >
             <IconButton
@@ -171,7 +163,13 @@ const Navbar: React.FC<Props> = ({ anchorLinks }) => {
               ))}
             </Menu>
           </Box>
-          <InventoryIcon sx={{ display: { xs: "flex", md: "none" }, marginRight: 1 }} />
+          <Typography
+            variant="h6"
+            noWrap
+            className={classes.logo}
+          >
+            <MuiLink sx={{textDecoration: 'none'}} href="/inventory-management" color="inherit">Inventory</MuiLink>
+          </Typography>
           <Box
             sx={{
               flexGrow: 1,

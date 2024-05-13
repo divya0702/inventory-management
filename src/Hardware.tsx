@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { makeStyles } from '@mui/styles';
-import { Grid } from '@mui/material';
+import { Grid, useMediaQuery } from '@mui/material';
 import theme from './theme';
 
 const useStyles = makeStyles({
@@ -34,6 +34,7 @@ const useStyles = makeStyles({
 
 const Hardware = () => {
   const classes = useStyles();
+  const isMobile = useMediaQuery('(min-width: 360px) and (max-width:768px)');
   return (
     <div id='hardware-section' className={classes.hardware}>
       <Grid container spacing={2}>
