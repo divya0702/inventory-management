@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  scroll-behavior: smooth;
 }
 
 .App-logo {
@@ -36,3 +37,11 @@
     transform: rotate(360deg);
   }
 }
+:root {
+  /* Define primary and secondary colors */
+  --primary-color: #A17561; /* mocha */
+  --secondary-color: #71BBB2; /* teal */
+}
+
+/* Other CSS styles */
+
